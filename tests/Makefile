@@ -53,11 +53,12 @@ test: all
 
 help:
 	@printf "Usage:\n"
+	@printf "\t'Command':\t\t\t\tDescription\n"
 	@printf "\t'make test':\t\t\t\tRun all Tests\n"
 	@printf "\t'make test C=[Container]':\t\tRun Test for specific Container\n"
 	@printf "\t'make test C=[Container] T=[Test]':\tRun specific Test for specific Container\n"
 	@printf "\t'make no_bench':\t\t\tRun all Tests without Benchmark\n"
-	@printf "\t'make extra_bench':\t\tRun all Tests and print execution Time\n"
+	@printf "\t'make extra_bench':\t\t\tRun all Tests and print execution Time\n"
 
 config: config_help
 config_help:
