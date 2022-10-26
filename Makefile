@@ -12,7 +12,7 @@
 
 ##################################################
 # Configure this to your ft_containers Directory #
-FT_CONTAINERS_PATH = ../ft_containers/ft_containers
+FT_CONTAINERS_PATH = ../ft_containers/
 ##################################################
 
 
