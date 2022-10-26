@@ -58,7 +58,7 @@ help:
 	@printf "\t'make test C=[Container]':\t\tRun Test for specific Container\n"
 	@printf "\t'make test C=[Container] T=[Test]':\tRun specific Test for specific Container\n"
 	@printf "\t'make no_bench':\t\t\tRun all Tests without Benchmark\n"
-	@printf "\t'make extra_bench':\t\t\tRun all Tests and print execution Time\n"
+	@printf "\t'make bench_info':\t\t\tRun all Tests and print execution Time\n"
 
 config: config_help
 config_help:
@@ -85,7 +85,7 @@ stack: test
 no_bench: BENCH=-DNO_BENCH
 no_bench: re test
 
-extra_bench: BENCH=-DEXTRA_BENCH
-extra_bench: re test
+bench_info: BENCH=-DBENCH_INFO
+bench_info: re test
 
-.PHONY: all clean fclean re test help vector map set stack no_bench
+.PHONY: all clean fclean re test help vector map set stack no_bench bench_info

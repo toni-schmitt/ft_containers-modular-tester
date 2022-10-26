@@ -22,8 +22,8 @@
 #include "config.hpp"
 
 #define BENCH
-#if !defined(EXTRA_BENCH)
-#define EXTRA_BENCH 0
+#if !defined(BENCH_INFO)
+#define BENCH_INFO 0
 #if defined(NO_BENCH)
 #undef BENCH
 #endif
@@ -249,7 +249,7 @@ namespace tester
 			bool benchmark_succeeded = !(ft_duration > std_duration * 20.0);
 			std::cout << "Benchmark: ";
 			benchmark_succeeded ? (TEST_SUCCESS) : (TEST_FAILURE);
-			if (EXTRA_BENCH || !benchmark_succeeded)
+			if (BENCH_INFO || !benchmark_succeeded)
 			{
 				std::cout << write::color::fg::blue
 						  << "Benchmark Info:" << std::endl
