@@ -22,8 +22,10 @@
 #include "config.hpp"
 
 #define BENCH
-#ifdef NO_BENCH
-#undef BENCH
+#if !defined(EXTRA_BENCH)
+	#if defined(NO_BENCH)
+		#undef BENCH
+	#endif
 #endif
 
 #define TIME(x) clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &(x));
@@ -246,7 +248,7 @@ namespace tester
 			bool benchmark_succeeded = !(ft_duration > std_duration * 20.0);
 			std::cout << "Benchmark: ";
 			benchmark_succeeded ? (TEST_SUCCESS) : (TEST_FAILURE);
-			if (!benchmark_succeeded)
+			if (EXTRA_BENCH || !benchmark_succeeded)
 			{
 				std::cout << write::color::fg::blue
 						  << "Benchmark Info:" << std::endl

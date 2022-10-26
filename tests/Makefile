@@ -73,4 +73,7 @@ stack: test
 no_bench: BENCH=-DNO_BENCH
 no_bench: re test
 
+extra_bench: BENCH=-DEXTRA_BENCH
+extra_bench: re test
+
 .PHONY: all clean fclean re test help vector map set stack no_bench

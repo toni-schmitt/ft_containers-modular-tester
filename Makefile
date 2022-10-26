@@ -21,7 +21,7 @@ TESTER_DIR = ./tests
 TESTER_BIN = $(TESTER_DIR)/containers_tester
 INCFLAG := -I$(realpath $(FT_CONTAINERS_PATH))
 
-TOP_TARGETS := all clean fclean re test help vector map set stack no_bench
+TOP_TARGETS := all clean fclean re test help config_help config vector map set stack no_bench extra_bench
 
 $(TOP_TARGETS): $(TESTER_DIR)
 
