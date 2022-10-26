@@ -23,9 +23,10 @@
 
 #define BENCH
 #if !defined(EXTRA_BENCH)
-	#if defined(NO_BENCH)
-		#undef BENCH
-	#endif
+#define EXTRA_BENCH 0
+#if defined(NO_BENCH)
+#undef BENCH
+#endif
 #endif
 
 #define TIME(x) clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &(x));
