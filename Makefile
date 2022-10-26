@@ -6,7 +6,7 @@
 #    By: tschmitt <tschmitt@student.42heilbronn.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/26 21:58:57 by tschmitt          #+#    #+#              #
-#    Updated: 2022/10/26 22:12:17 by tschmitt         ###   ########.fr        #
+#    Updated: 2022/10/26 22:17:17 by tschmitt         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,6 +26,6 @@ $(TOP_TARGETS): $(TESTER_DIR)
 
 $(TESTER_DIR):
 	@$(MAKE) --no-print-directory -C $@ $(MAKECMDGOALS) INCFLAGS=$(INCFLAG)
-	@cp $(TESTER_BIN) $(notdir $(TESTER_BIN))
+#	@cp $(TESTER_BIN) $(notdir $(TESTER_BIN))
 
 .PHONY: $(TOP_TARGETS) $(TESTER_DIR)

@@ -6,7 +6,7 @@
 /*   By: tschmitt <tschmitt@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 19:38:17 by tschmitt          #+#    #+#             */
-/*   Updated: 2022/10/26 19:42:03 by tschmitt         ###   ########.fr       */
+/*   Updated: 2022/10/26 22:15:12 by tschmitt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 int main(int argc, char *argv[])
 {
-	system("rm -rf ./logs; rm -rf ./diffs; mkdir ./logs");
+	system("rm -rf ../logs; rm -rf ../diffs; mkdir -p ../logs");
 	atexit(delete_test_objects);
 	switch (argc)
 	{

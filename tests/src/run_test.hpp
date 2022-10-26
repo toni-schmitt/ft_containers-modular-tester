@@ -6,7 +6,7 @@
 /*   By: tschmitt <tschmitt@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 19:38:13 by tschmitt          #+#    #+#             */
-/*   Updated: 2022/10/26 20:13:12 by tschmitt         ###   ########.fr       */
+/*   Updated: 2022/10/26 22:16:10 by tschmitt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -222,9 +222,9 @@ namespace tester
 			if (!test_succeeded)
 			{
 				/* Prints Information if the Test was not successfully (log file path, diff file path)*/
-				std::string diff_path = "./diffs/" + test + ".diff";
+				std::string diff_path = "../diffs/" + test + ".diff";
 				std::string command = "diff -u " + std_log + ' ' + ft_log + " > " + diff_path;
-				system("mkdir -p ./diffs");
+				system("mkdir -p ../diffs");
 				system(command.c_str());
 
 				std::string std_log_actual_path = realpath(std_log.c_str(), NULL);
@@ -268,7 +268,7 @@ namespace tester
 		template < class TestObject >
 		static std::string _run_test_case(const std::string &test, TestObject test_object)
 		{
-			std::string test_file_name = file_name_prefix + test;
+			std::string test_file_name = "../" + file_name_prefix + test;
 			out_file_stream ofs(test_file_name, std::ofstream::out);
 			try
 			{
