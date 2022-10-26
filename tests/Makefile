@@ -6,18 +6,12 @@
 #    By: tschmitt <tschmitt@student.42heilbronn.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/26 19:38:06 by tschmitt          #+#    #+#              #
-#    Updated: 2022/10/26 19:55:40 by tschmitt         ###   ########.fr        #
+#    Updated: 2022/10/26 22:12:46 by tschmitt         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-
-##################################################
-# Configure this to your ft_containers Directory #
-	INCFLAGS=-I../ft_containers/
-##################################################
-
 CXX = c++
-CXXFLAGS = -std=c++98 -Wall -Werror -Wextra -g
+CXXFLAGS = -std=c++98 -Wall -Werror -Wextra
 
 BIN = ./containers_tester
 
