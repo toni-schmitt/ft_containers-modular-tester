@@ -57,6 +57,17 @@ help:
 	@printf "\t'make test C=[Container]':\t\tRun Test for specific Container\n"
 	@printf "\t'make test C=[Container] T=[Test]':\tRun specific Test for specific Container\n"
 	@printf "\t'make no_bench':\t\t\tRun all Tests without Benchmark\n"
+	@printf "\t'make extra_bench':\t\tRun all Tests and print execution Time\n"
+
+config: config_help
+config_help:
+	@printf "Configuration Help:\n"
+	@printf "Configuration in Makefile:\n"
+	@printf "\tChange FT_CONTAINERS_PATH to your path (where your .hpp files are)\n"
+	@printf "Directory Structure:\n"
+	@printf "\t/ft_containers\n"
+	@printf "\t|-- 'ft_containers' (where your .hpp files are)\n"
+	@printf "\t|-- ft_containers-modular-tester\n"
 
 vector: C=vector
 vector: test
