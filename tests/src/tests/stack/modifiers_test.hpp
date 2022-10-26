@@ -57,7 +57,7 @@ namespace stack
 			this->_write_to_file(container);
 
 			value_type *test_case = GET_TEST_CASE;
-			std::srand(test_case[ 0 ]);
+			std::srand(*reinterpret_cast<int *>(&test_case[ 0 ]));
 			const int max = std::rand() % 100;
 			for (int i = 0; i < max; ++i)
 			{

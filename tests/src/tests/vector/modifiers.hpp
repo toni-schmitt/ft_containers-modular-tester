@@ -144,7 +144,7 @@ namespace vector
 			(*this->ofs) << "single element (1)" << std::endl;
 			value_type *test_case = GET_TEST_CASE;
 
-			std::srand(test_case[ 0 ]);
+			std::srand(*reinterpret_cast<int*>(&test_case[ 0 ]));
 
 			write::container::to_file(container, *this->ofs);
 			for (int i = 0; i < 20; ++i)
@@ -184,7 +184,7 @@ namespace vector
 			(*this->ofs) << "erase()" << std::endl;
 			write::container::to_file(container, *this->ofs);
 			value_type *test_case = GET_TEST_CASE;
-			std::srand(test_case[ 0 ]);
+			std::srand(*reinterpret_cast<int*>(&test_case[ 0 ]));
 
 			(*this->ofs) << "single position (1)" << std::endl;
 

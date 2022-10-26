@@ -44,9 +44,6 @@ namespace stack
 				TRY_CATCH_WRITE(
 						(*this->ofs) << this->container.top() << ','
 				)
-				TRY_CATCH_WRITE(
-						(*this->ofs) << (this->container.top() -= i) << ','
-				)
 			}
 			this->_write_to_file(this->container);
 

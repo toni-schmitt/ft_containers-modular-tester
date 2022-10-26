@@ -47,7 +47,7 @@ namespace map
 			(*this->ofs) << "operator[]" << std::endl;
 
 			value_type *test_case = GET_TEST_CASE;
-			std::srand(test_case[ 0 ].first);
+			std::srand(*reinterpret_cast<int *>(&test_case[ 0 ].second));
 
 			for (size_t i = 0; i < container.size() / 2 && i < test_cases::size; ++i)
 			{
@@ -55,9 +55,9 @@ namespace map
 				do
 				{
 					index = std::rand() % 10;
-				} while (index >= container.size());
-				TRY_CATCH_WRITE((*this->ofs) << container[ index ] << ',');
-				TRY_CATCH_WRITE((*this->ofs) << (container[ index ] = test_case[ i ].first) << ',');
+				} while (index >= container.size() && index >= 100);
+				TRY_CATCH_WRITE((*this->ofs) << container[ test_case[ index ].first ] << ',');
+				TRY_CATCH_WRITE((*this->ofs) << (container[ test_case[ index ].first ] = test_case[ i ].first) << ',');
 			}
 			(*this->ofs) << std::endl;
 
@@ -69,11 +69,11 @@ namespace map
 			(*this->ofs) << "at()" << std::endl;
 
 			value_type *test_case = GET_TEST_CASE;
-			std::srand(test_case[ 0 ].first);
+			std::srand(*reinterpret_cast<int *>(&test_case[ 0 ].second));
 
 			for (size_t i = 0; i < container.size() / 2; ++i)
 			{
-				TRY_CATCH_WRITE((*this->ofs) << container.at(std::rand() % 10) << ',');
+				TRY_CATCH_WRITE((*this->ofs) << container.at(test_case[ std::rand() % 10 ].first) << ',');
 			}
 			(*this->ofs) << std::endl;
 
