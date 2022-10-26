@@ -116,8 +116,8 @@ namespace ft_namespace
 
 bool compare_files(const std::string &file_1, const std::string &file_2)
 {
-	std::ifstream file_stream_1(file_1, std::ifstream::binary | std::ifstream::ate);
-	std::ifstream file_stream_2(file_2, std::ifstream::binary | std::ifstream::ate);
+	std::ifstream file_stream_1(file_1.c_str(), std::ifstream::binary | std::ifstream::ate);
+	std::ifstream file_stream_2(file_2.c_str(), std::ifstream::binary | std::ifstream::ate);
 
 	if (file_stream_1.fail() || file_stream_2.fail())
 		return false; //file problem

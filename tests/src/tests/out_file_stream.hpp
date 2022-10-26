@@ -24,7 +24,7 @@ public:
 	explicit out_file_stream(
 			const std::string &file_name,
 			std::ios_base::openmode mode = ios_base::out
-	) : std::ofstream(file_name, mode),
+	) : std::ofstream(file_name.c_str(), mode),
 		_file_name(file_name) { };
 
 	const std::string &get_file_name() const { return this->_file_name; }

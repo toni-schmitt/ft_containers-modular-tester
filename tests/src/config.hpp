@@ -22,9 +22,7 @@
  * @example './containers_tester "[Container]" "generic_construction"' would be a valid Test (for Vector, Map and Set)
  * @example './containers_tester "stack" "operations"' would be an invalid Test
  */
-#define AVAILABLE_TESTS \
-    /* Static Member Initialization */ \
-    \
+#define AVAILABLE_TESTS /* Static Member Initialization */ \
     /* Available Tests */ \
     /* Vector */ \
     const int test::available_tests::vector_size = 6; \
@@ -62,3 +60,4 @@
             "element_access", \
             "modifiers" \
     };
+
