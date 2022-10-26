@@ -13,7 +13,7 @@
 #####################################################
 #	Configure this to your ft_containers Directory	#
 #				(with your .hpp files)				#
-FT_CONTAINERS_PATH = ../ft_containers/
+FT_CONTAINERS_PATH = /Users/tschmitt/repos/ft_containers/ft_containers
 #####################################################
 
 
