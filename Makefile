@@ -14,6 +14,8 @@
 #	Configure this to your ft_containers Directory	#
 #				(with your .hpp files)				#
 FT_CONTAINERS_PATH = ../ft_containers/
+#	Configure this to the Type of the Containers	#
+TYPE = std::string
 #####################################################
 
 
@@ -26,7 +28,7 @@ TOP_TARGETS := all clean fclean re test help config_help config vector map set s
 $(TOP_TARGETS): $(TESTER_DIR)
 
 $(TESTER_DIR):
-	@$(MAKE) --no-print-directory -C $@ $(MAKECMDGOALS) INCFLAGS=$(INCFLAG)
+	$(MAKE) --no-print-directory -C $@ $(MAKECMDGOALS) INCFLAGS=$(INCFLAG) TYPE=-DTYPE=$(strip $(TYPE))
 #	@cp $(TESTER_BIN) $(notdir $(TESTER_BIN))
 
 .PHONY: $(TOP_TARGETS) $(TESTER_DIR)

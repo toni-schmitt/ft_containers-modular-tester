@@ -26,11 +26,11 @@ all: $(BIN)
 
 -include $(DEPENDS)
 
-$(BIN): TYPE=-DTYPE=int
 $(BIN): $(OBJECTS)
 	$(CXX) $(CXXFLAGS) $< -o $@
 
 
+$(BUILD_DIR)/%.o: ../Makefile
 $(BUILD_DIR)/%.o: $(SRC_DIR)/%.cpp
 	@mkdir -p $(dir $@)
 	$(CXX) $(CXXFLAGS) -MMD -MP $(INCFLAGS) $(BENCH) $(TYPE) -c $< -o $@
