@@ -16,6 +16,8 @@
 #include "../i_base_test.hpp"
 #include "../../utility/write.hpp"
 
+#define INFO(x) std::cout << write::color::fg::yellow << (x) << write::color::bg::reset << write::color::fg::reset;
+
 namespace vector
 {
 	template < class Container >
@@ -26,11 +28,13 @@ namespace vector
 
 		void test(out_file_stream *ofs = NULL)
 		{
+			std::cout.setf(std::ios_base::unitbuf);
 			if (ofs != NULL)
 			{
 				this->update_ofs(ofs);
 			}
 
+			INFO("Testing Vector modifiers. This is gonna take a while so be patient :D\n")
 			this->print_test_start();
 
 			this->container = container_type();
@@ -65,11 +69,15 @@ namespace vector
 
 
 			this->print_test_end();
+			std::cout.unsetf(std::ios_base::unitbuf);
+			std::cout << "\r\e[K" << std::flush;
+			std::cout << "\e[A" << "\r\e[K" << std::flush;
 		}
 
 	private:
 		void _test_assign(container_type &container)
 		{
+			INFO("...");
 			(*this->ofs) << "assign()" << std::endl;
 			(*this->ofs) << "container before assign()" << std::endl;
 			write::container::to_file(container, *this->ofs);
@@ -100,6 +108,7 @@ namespace vector
 
 		void _test_push_back(container_type &container)
 		{
+			INFO("...");
 			(*this->ofs) << "push_back()" << std::endl;
 
 			value_type *test_case = test_cases::get_test_case(value_type());
@@ -125,6 +134,7 @@ namespace vector
 
 		void _test_pop_back(container_type &container)
 		{
+			INFO("...");
 			(*this->ofs) << "pop_back()" << std::endl;
 
 			write::container::to_file(container, *this->ofs);
@@ -139,12 +149,13 @@ namespace vector
 
 		void _test_insert(container_type &container)
 		{
+			INFO("...");
 			(*this->ofs) << "insert()" << std::endl;
 
 			(*this->ofs) << "single element (1)" << std::endl;
 			value_type *test_case = GET_TEST_CASE;
 
-			std::srand(*reinterpret_cast<int*>(&test_case[ 0 ]));
+			std::srand(*reinterpret_cast<int *>(&test_case[ 0 ]));
 
 			write::container::to_file(container, *this->ofs);
 			for (int i = 0; i < 20; ++i)
@@ -181,10 +192,11 @@ namespace vector
 
 		void _test_erase(container_type &container)
 		{
+			INFO("...");
 			(*this->ofs) << "erase()" << std::endl;
 			write::container::to_file(container, *this->ofs);
 			value_type *test_case = GET_TEST_CASE;
-			std::srand(*reinterpret_cast<int*>(&test_case[ 0 ]));
+			std::srand(*reinterpret_cast<int *>(&test_case[ 0 ]));
 
 			(*this->ofs) << "single position (1)" << std::endl;
 
@@ -209,6 +221,7 @@ namespace vector
 
 		void _test_swap(container_type &container)
 		{
+			INFO("...");
 			(*this->ofs) << "swap()" << std::endl;
 			write::container::to_file(container, *this->ofs);
 
@@ -228,6 +241,7 @@ namespace vector
 
 		void _test_clear(container_type &container)
 		{
+			INFO("...");
 			(*this->ofs) << "clear()" << std::endl;
 
 			container.clear();

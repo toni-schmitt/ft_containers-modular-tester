@@ -25,11 +25,13 @@ namespace write
 			{
 				FG_RED = 31,
 				FG_GREEN = 32,
+				FG_YELLOW = 33,
 				FG_BLUE = 34,
 				FG_BLACK = 30,
 				FG_DEFAULT = 39,
 				BG_RED = 41,
 				BG_GREEN = 42,
+				BG_YELLOW = 43,
 				BG_BLUE = 44,
 				BG_DEFAULT = 49
 			};
@@ -53,6 +55,7 @@ namespace write
 			static modifier red(FG_RED);
 			static modifier green(FG_GREEN);
 			static modifier blue(FG_BLUE);
+			static modifier yellow(FG_YELLOW);
 			static modifier black(FG_BLACK);
 			static modifier reset(FG_DEFAULT);
 		}
@@ -61,6 +64,7 @@ namespace write
 			static modifier red(BG_RED);
 			static modifier green(BG_GREEN);
 			static modifier blue(BG_BLUE);
+			static modifier yellow(BG_YELLOW);
 			static modifier reset(BG_DEFAULT);
 		}
 
