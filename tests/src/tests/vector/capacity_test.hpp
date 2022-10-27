@@ -74,7 +74,7 @@ namespace vector
 			{
 				(*this->ofs) << "Reserving " << to_resize_to << std::endl;
 				container.resize(to_resize_to);
-				(*this->ofs) << container.size() << ',' << container.capacity() << std::endl;
+				(*this->ofs) << container.size() << std::endl;
 			}
 			write::container::to_file(container, (*this->ofs));
 		}
