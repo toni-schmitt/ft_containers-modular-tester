@@ -34,28 +34,29 @@ namespace generic
 
 			value_type *test_case = test_cases::get_test_case(value_type());
 			container_type range = container_type(test_case, test_case + test_cases::size);
+			container_type this_container;
 
 			// Begin
 			(*this->ofs) << "Testing \'.begin()\' on empty Container" << std::endl;
-			write::iterator::to_file(this->container.begin(), this->container.end(), (*this->ofs));
+			write::iterator::to_file(this_container.begin(), this_container.end(), (*this->ofs));
 			(*this->ofs) << "Testing \'.begin()\' on Container with a size of " << range.size() << std::endl;
 			write::iterator::to_file(range.begin(), range.end(), (*this->ofs));
 
 			// End
 			(*this->ofs) << "Testing \'.end()\' on empty Container" << std::endl;
-			write::iterator::to_file(this->container.end(), this->container.end(), (*this->ofs));
+			write::iterator::to_file(this_container.end(), this_container.end(), (*this->ofs));
 			(*this->ofs) << "Testing \'.end()\' on Container with a size of " << range.size() << std::endl;
 			write::iterator::to_file(range.end(), range.end(), (*this->ofs));
 
 			// RBegin
 			(*this->ofs) << "Testing \'.rbegin()\' on empty Container" << std::endl;
-			write::iterator::to_file(this->container.rbegin(), this->container.rend(), (*this->ofs));
+			write::iterator::to_file(this_container.rbegin(), this_container.rend(), (*this->ofs));
 			(*this->ofs) << "Testing \'.rbegin()\' on Container with a size of " << range.size() << std::endl;
 			write::iterator::to_file(range.rbegin(), range.rend(), (*this->ofs));
 
 			// REnd
 			(*this->ofs) << "Testing \'.rend()\' on empty Container" << std::endl;
-			write::iterator::to_file(this->container.rend(), this->container.rend(), (*this->ofs));
+			write::iterator::to_file(this_container.rend(), this_container.rend(), (*this->ofs));
 			(*this->ofs) << "Testing \'.rend()\' on Container with a size of " << range.size() << std::endl;
 			write::iterator::to_file(range.rend(), range.rend(), (*this->ofs));
 

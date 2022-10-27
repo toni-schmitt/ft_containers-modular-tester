@@ -32,13 +32,13 @@ namespace set
 
 			this->print_test_start();
 
-			this->container = FILL_CONTAINER_WITH_TEST_CASE;
+			container_type this_container = FILL_CONTAINER_WITH_TEST_CASE;
 
-			this->_test_find(this->container);
-			this->_test_count(this->container);
-			this->_test_lower_bound(this->container);
-			this->_test_upper_bound(this->container);
-			this->_test_equal_range(this->container);
+			this->_test_find(this_container);
+			this->_test_count(this_container);
+			this->_test_lower_bound(this_container);
+			this->_test_upper_bound(this_container);
+			this->_test_equal_range(this_container);
 
 
 			this->print_test_end();

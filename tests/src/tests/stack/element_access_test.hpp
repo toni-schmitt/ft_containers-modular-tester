@@ -32,20 +32,21 @@ namespace stack
 
 			this->print_test_start();
 
+			container_type this_container;
 			{
 				typedef typename container_type::container_type underlying_container;
 				value_type *test_case = GET_TEST_CASE;
 				underlying_container cntr = underlying_container(test_case, test_case + test_cases::size);
-				this->container = container_type(cntr);
+				this_container = container_type(cntr);
 			}
 
-			for (size_t i = 0; i < this->container.size() / 2; ++i)
+			for (size_t i = 0; i < this_container.size() / 2; ++i)
 			{
 				TRY_CATCH_WRITE(
-						(*this->ofs) << this->container.top() << ','
+						(*this->ofs) << this_container.top() << ','
 				)
 			}
-			this->_write_to_file(this->container);
+			this->_write_to_file(this_container);
 
 			this->print_test_end();
 		}

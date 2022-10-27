@@ -33,11 +33,11 @@ namespace vector
 
 			this->print_test_start();
 
-			this->container = container_type();
+			container_type this_container = container_type();
 
 			(*this->ofs) << "Testing with empty Container:" << std::endl;
-			this->_test_reserve(this->container);
-			this->_test_resize(this->container);
+			this->_test_reserve(this_container);
+			this->_test_resize(this_container);
 
 			value_type *test_case = test_cases::get_test_case(value_type());
 			container_type range = container_type(test_case, test_case + test_cases::size);

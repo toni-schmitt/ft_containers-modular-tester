@@ -38,14 +38,15 @@ namespace stack
 				this->_test_size(empty_container);
 			}
 
+			container_type this_container;
 			{
 				typedef typename container_type::container_type underlying_container;
 				value_type *test_case = GET_TEST_CASE;
 				underlying_container cntr = underlying_container(test_case, test_case + test_cases::size);
-				this->container = container_type(cntr);
+				this_container = container_type(cntr);
 			}
-			this->_test_empty(this->container);
-			this->_test_size(this->container);
+			this->_test_empty(this_container);
+			this->_test_size(this_container);
 
 			this->print_test_end();
 		}

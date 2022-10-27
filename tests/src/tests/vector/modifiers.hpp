@@ -37,7 +37,7 @@ namespace vector
 			INFO("Testing Vector modifiers. This is gonna take a while so be patient :D\n")
 			this->print_test_start();
 
-			this->container = container_type();
+			container_type this_container = container_type();
 
 			(*this->ofs) << "Testing with Empty Container: " << std::endl;
 			{
@@ -58,14 +58,14 @@ namespace vector
 				}
 			}
 
-			(*this->ofs) << "Testing with this->container: " << std::endl;
-			this->_test_assign(this->container);
-			this->_test_push_back(this->container);
-			this->_test_pop_back(this->container);
-			this->_test_insert(this->container);
-			this->_test_erase(this->container);
-			this->_test_swap(this->container);
-			this->_test_clear(this->container);
+			(*this->ofs) << "Testing with this_container: " << std::endl;
+			this->_test_assign(this_container);
+			this->_test_push_back(this_container);
+			this->_test_pop_back(this_container);
+			this->_test_insert(this_container);
+			this->_test_erase(this_container);
+			this->_test_swap(this_container);
+			this->_test_clear(this_container);
 
 
 			this->print_test_end();

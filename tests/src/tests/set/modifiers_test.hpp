@@ -32,17 +32,17 @@ namespace set
 
 			this->print_test_start();
 
-			this->container = FILL_CONTAINER_WITH_TEST_CASE;
+			container_type this_container = FILL_CONTAINER_WITH_TEST_CASE;
 
-			this->_test_insert(this->container);
+			this->_test_insert(this_container);
 
-			this->_test_erase(this->container);
+			this->_test_erase(this_container);
 
-			this->_test_insert(this->container);
+			this->_test_insert(this_container);
 
-			this->_test_swap(this->container);
+			this->_test_swap(this_container);
 
-			this->_test_clear(this->container);
+			this->_test_clear(this_container);
 
 			this->print_test_end();
 		}

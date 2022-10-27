@@ -32,27 +32,28 @@ namespace generic
 
 			this->print_test_start();
 
+			container_type this_container = container_type();
 			// Empty
-			(*this->ofs) << "Check if this->container is empty" << std::endl;
-			(*this->ofs) << this->container.empty() << std::endl;
+			(*this->ofs) << "Check if this_container is empty" << std::endl;
+			(*this->ofs) << this_container.empty() << std::endl;
 			value_type *test_case = test_cases::get_test_case(value_type());
 			container_type range = container_type(test_case, test_case + test_cases::size);
 			(*this->ofs) << "Check if newly filled container \'range\' is empty" << std::endl;
 			(*this->ofs) << range.empty() << std::endl;
 
 			// Size
-			(*this->ofs) << "Checking size of this->container" << std::endl;
-			(*this->ofs) << this->container.size() << std::endl;
+			(*this->ofs) << "Checking size of this_container" << std::endl;
+			(*this->ofs) << this_container.size() << std::endl;
 			(*this->ofs) << "Checking size of \'range\'" << std::endl;
 			(*this->ofs) << range.size() << std::endl;
 
 			// Max Size
-			(*this->ofs) << "Checking max_size of \'this->container\'" << std::endl;
-			(*this->ofs) << this->container.max_size() << std::endl;
+			(*this->ofs) << "Checking max_size of \'this_container\'" << std::endl;
+			(*this->ofs) << this_container.max_size() << std::endl;
 			(*this->ofs) << "Checking max_size of \'range\'" << std::endl;
 			(*this->ofs) << range.max_size() << std::endl;
-			(*this->ofs) << "Comparing max_size of \'this->container\' and \'range\'" << std::endl;
-			(*this->ofs) << (this->container.max_size() == range.max_size()) << std::endl;
+			(*this->ofs) << "Comparing max_size of \'this_container\' and \'range\'" << std::endl;
+			(*this->ofs) << (this_container.max_size() == range.max_size()) << std::endl;
 
 			this->print_test_end();
 		}

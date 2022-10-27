@@ -34,10 +34,11 @@ namespace generic
 
 			this->print_test_start();
 
+			container_type this_container = container_type();
 			// Default Constructor
 			(*this->ofs) << "Calling Default Constructor" << std::endl;
-			this->container = container_type();
-			write::container::to_file(this->container, (*this->ofs));
+			this_container = container_type();
+			write::container::to_file(this_container, (*this->ofs));
 
 			// Range Constructor
 			(*this->ofs) << "Calling Range Constructor" << std::endl;
@@ -50,7 +51,7 @@ namespace generic
 			container_type copy = container_type(range);
 			write::container::to_file(copy, (*this->ofs));
 			write::container::to_file(range, (*this->ofs));
-			copy = this->container;
+			copy = this_container;
 			write::container::to_file(copy, (*this->ofs));
 			write::container::to_file(range, (*this->ofs));
 

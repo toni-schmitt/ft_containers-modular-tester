@@ -32,11 +32,11 @@ namespace map
 
 			this->print_test_start();
 
-			this->container = FILL_CONTAINER_WITH_TEST_CASE;
-			(*this->ofs) << "Testing with Container of Size " << this->container.size() << std::endl;
+			container_type this_container = FILL_CONTAINER_WITH_TEST_CASE;
+			(*this->ofs) << "Testing with Container of Size " << this_container.size() << std::endl;
 
-			this->_test_operator(this->container);
-			this->_test_at(this->container);
+			this->_test_operator(this_container);
+			this->_test_at(this_container);
 
 			this->print_test_end();
 		}
@@ -46,18 +46,17 @@ namespace map
 		{
 			(*this->ofs) << "operator[]" << std::endl;
 
+			std::srand(50000000);
 			value_type *test_case = GET_TEST_CASE;
-			std::srand(*reinterpret_cast<int *>(&test_case[ 0 ].second));
 
 			for (size_t i = 0; i < container.size() / 2 && i < test_cases::size; ++i)
 			{
-				size_t index;
-				do
-				{
-					index = std::rand() % 10;
-				} while (index >= container.size() && index >= 100);
-				TRY_CATCH_WRITE((*this->ofs) << container[ test_case[ index ].first ] << ',');
-				TRY_CATCH_WRITE((*this->ofs) << (container[ test_case[ index ].first ] = test_case[ i ].first) << ',');
+				size_t index = std::rand() % 10;
+				TRY_CATCH_WRITE((*this->ofs) << index << ':' << container[ test_case[ index ].first ] << ',');
+				TRY_CATCH_WRITE(
+						(*this->ofs) << index << ':' << (container[ test_case[ index ].first ] = test_case[ i ].first)
+									 << ','
+				);
 			}
 			(*this->ofs) << std::endl;
 
@@ -68,12 +67,13 @@ namespace map
 		{
 			(*this->ofs) << "at()" << std::endl;
 
+			std::srand(500);
 			value_type *test_case = GET_TEST_CASE;
-			std::srand(*reinterpret_cast<int *>(&test_case[ 0 ].second));
 
 			for (size_t i = 0; i < container.size() / 2; ++i)
 			{
-				TRY_CATCH_WRITE((*this->ofs) << container.at(test_case[ std::rand() % 10 ].first) << ',');
+				ssize_t index = std::rand() % 10;
+				TRY_CATCH_WRITE((*this->ofs) << index << ':' << container.at(test_case[ index ].first) << ',');
 			}
 			(*this->ofs) << std::endl;
 
