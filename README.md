@@ -52,6 +52,17 @@ Adding a Test Case is super easy, just follow these steps (I added 'insert_basic
 
 ![clion_add_test_case_test_object](https://user-images.githubusercontent.com/25370820/198899727-f23469fc-7d97-433d-bf84-457506c730a5.gif)
 </details>
+<details>
+    <summary>Show Description</summary>
+    
+1. Go to `tests/src/tests/[Container]/test_objects.hpp`
+2. `#include` you newly added `.hpp` file
+3. Find the correct place for the new Test Object
+    1. The Test Objects are orderd alphabetically, first listing `generic::` Test Objects (if any) and then listing `[Container]::` Test Objects
+4. Add a Test Object for `::std[]` (with Template parameter `ContainerSTD`)
+5. Add a Test Object for `::ft[]` (with Template parameter `ContainerFT`)
+###### The Tester automatically deletes all Test Objects `atexit`
+</details>
 
 ### 3. Add the Test Case to available_tests
 <details>
