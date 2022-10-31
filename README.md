@@ -70,6 +70,14 @@ Adding a Test Case is super easy, just follow these steps (I added 'insert_basic
 
 ![clion_add_test_case_available_test](https://user-images.githubusercontent.com/25370820/198899758-f2356186-5551-470b-86fa-818c277b50e5.gif)
 </details>
+<details>
+    <summary>Show Description</summary>
+    
+1. Go to `tests/src/config.hpp`
+2. Add the Name of your added Test to `available_tests::[Container]`
+    1. <b>Important:</b> The Index of the newly added string has to be the same as in `test_objects.hpp`
+3. Adjust the `::[Container]_size`
+</Adetails>
 
 ### 4. Run your newly added Test Case
 <details>
