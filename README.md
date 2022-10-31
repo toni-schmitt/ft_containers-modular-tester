@@ -25,6 +25,23 @@ Adding a Test Case is super easy, just follow these steps (I added 'insert_basic
 
 ![clion_add_test_case_class](https://user-images.githubusercontent.com/25370820/198899713-70d72c33-9d0a-45ee-a0af-d95d19be13fc.gif)
 </details>
+<details>
+    <summary>Show Description</summary>
+
+1. Add a `.hpp` file under `tests/src/tests/[Container]` (`[Container]` being the Container you want to add a Test Case) (it is advised to follow the existing Naming Convention for your newly added `.hpp` file)
+2. Copy the contents from `tests/src/tests/example_test.hpp` into your newly added `.hpp` file
+3. Modify the copied content in your newly added `.hpp` file
+    1. Modify `CONTAINER_NAME` to the Container (`[Container]`) you wanted to add a Test Case to 
+        1. <b>Important:</b> `CONTAINER_NAME` has to be the same as `[Container]` (the Folder)
+    2. Modify `TEST_CASE_NAME` to your Test Case Name (the Name does not have to be the same as the `.hpp` file, but it is advised to do so)
+4. Add your own Tests
+    1. Every Test works with log files, it is advised to write a lot of stuff into these log files
+        1. You can write to the Log file with [`ofs`][1] and with the [`write::`][2] namespace defined in [`tests/src/utility/write.hpp`][3]
+
+[1]: https://github.com/toni-schmitt/ft_containers-modular-tester/blob/main/tests/src/tests/i_base_test.hpp#L37
+[2]: https://github.com/toni-schmitt/ft_containers-modular-tester/blob/main/tests/src/utility/write.hpp#L18-L118
+[3]: https://github.com/toni-schmitt/ft_containers-modular-tester/blob/main/tests/src/utility/write.hpp
+</details>
 
 ### 2. Add a Test object
 <details>
